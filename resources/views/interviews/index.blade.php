@@ -29,7 +29,7 @@
               <a href="{{ route('interviews.index', ['id' => $interview->id]) }}" class="list-group-item">
                 {{ $interview->company->company_name }}
                 {{ $interview->company->company_note }}
-                {{ $interview->schedule }}
+                {{ $interview->formatted_schedule }}
               </a>
             @endforeach
           </div>
