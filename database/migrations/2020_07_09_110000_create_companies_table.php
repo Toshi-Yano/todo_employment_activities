@@ -14,10 +14,13 @@ class CreateCompaniesTable extends Migration
     public function up()
     {
         Schema::create('companies', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->increments("id");
             $table->string('company_name', 100);
             $table->string('company_note', 1000);
+            $table->integer('route_id')->unsigned();
+            $table->timestamps();
+
+            $table->foreign('route_id')->references('id')->on('routes');
         });
     }
 
