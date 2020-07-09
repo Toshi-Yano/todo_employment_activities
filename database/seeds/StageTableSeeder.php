@@ -13,29 +13,22 @@ class StageTableSeeder extends Seeder
     public function run()
     {
         DB::table("stages")->insert([
+            "body" => "お見送り",
+        ]);
+        DB::table("stages")->insert([
             "body" => "書類選考",
-            "created_at" => new DateTime(),
-            "updated_at" => new DateTime(),
         ]);
         DB::table("stages")->insert([
             "body" => "一次面接",
-            "created_at" => new DateTime(),
-            "updated_at" => new DateTime(),
         ]);
         DB::table("stages")->insert([
             "body" => "二次面接",
-            "created_at" => new DateTime(),
-            "updated_at" => new DateTime(),
         ]);
         DB::table("stages")->insert([
             "body" => "三次面接",
-            "created_at" => new DateTime(),
-            "updated_at" => new DateTime(),
         ]);
         DB::table("stages")->insert([
             "body" => "最終面接",
-            "created_at" => new DateTime(),
-            "updated_at" => new DateTime(),
         ]);
     }
 }

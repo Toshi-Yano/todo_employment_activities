@@ -14,18 +14,12 @@ class RouteTableSeeder extends Seeder
     {
         DB::table("routes")->insert([
             "body" => "リクナビ",
-            "created_at" => new DateTime(),
-            "updated_at" => new DateTime(),
         ]);
         DB::table("routes")->insert([
             "body" => "マイナビ",
-            "created_at" => new DateTime(),
-            "updated_at" => new DateTime(),
         ]);
         DB::table("routes")->insert([
             "body" => "Wantedly",
-            "created_at" => new DateTime(),
-            "updated_at" => new DateTime(),
         ]);
     }
 }

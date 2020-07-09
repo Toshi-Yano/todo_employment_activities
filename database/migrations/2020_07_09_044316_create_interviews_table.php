@@ -17,10 +17,14 @@ class CreateInterviewsTable extends Migration
             $table->increments("id");
             $table->dateTime("schedule");
             $table->string("interview_note", 1000);
+            $table->integer('user_id')->unsigned();
             $table->integer('company_id')->unsigned();
+            $table->integer('stage_id')->unsigned();
             $table->timestamps();
-            
+
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('company_id')->references('id')->on('companies');
+            $table->foreign('stage_id')->references('id')->on('stages');
         });
     }
 
