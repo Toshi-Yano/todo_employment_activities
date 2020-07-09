@@ -8,6 +8,12 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+
+    public function interviews()
+    {
+        return $this->hasMany('App\Interview');
+    }
+
     use Notifiable;
 
     /**

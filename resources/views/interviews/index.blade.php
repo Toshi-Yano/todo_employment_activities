@@ -16,7 +16,7 @@
 <main>
   <div class="container">
     <div class="row">
-      <div class="col col-md-4">
+      <div class="col">
         <nav class="panel panel-default">
           <div class="panel-heading">フォルダ</div>
           <div class="panel-body">
@@ -27,14 +27,15 @@
           <div class="list-group">
             @foreach($interviews as $interview)
               <a href="{{ route('interviews.index', ['id' => $interview->id]) }}" class="list-group-item">
-                {{ $interview->interview_note }}
+                {{ $interview->company->company_name }}
+                {{ $interview->company->company_note }}
+                {{ $interview->schedule }}
               </a>
             @endforeach
           </div>
         </nav>
       </div>
-      <div class="column col-md-8">
-        <!-- ここにタスクが表示される -->
+      <div class="column">
       </div>
     </div>
   </div>

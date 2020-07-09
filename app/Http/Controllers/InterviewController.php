@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Interview;
+use App\Company;
 use App\Http\Requests\InterviewRequest;
 
 class InterviewController extends Controller
@@ -11,6 +12,6 @@ class InterviewController extends Controller
     {
         $interviews = Interview::all();
         
-        return view("interviews/index", compact("interviews"));
+        return view("interviews/index",compact("interviews"));
     }
 }
