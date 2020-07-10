@@ -11,8 +11,14 @@ class InterviewController extends Controller
     public function index()
     {
         $interviews = Interview::all();
+        $companies = Company::all();
         
-        return view("interviews/index", compact("interviews"));
+        return view("interviews/index", [
+            // compact("interviews"),
+            // compact("companies"),
+            "interviews" => $interviews,
+            "companies" => $companies,
+        ]);
     }
 
     public function showCreateForm(int $id)
