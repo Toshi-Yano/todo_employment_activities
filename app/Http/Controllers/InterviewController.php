@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Interview;
-use App\Company;
 use App\Http\Requests\InterviewRequest;
 
 class InterviewController extends Controller

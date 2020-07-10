@@ -13,7 +13,7 @@ class CompanyRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,8 +25,18 @@ class CompanyRequest extends FormRequest
     {
         return [
             "company_name" => "required|max:100",
-            "company_note" => "nullable|max:1000",
-            
+            "company_note" => "required|max:1000",
+            // "company_note" => "nullable|max:1000",
+            "route_id" => "required",
+        ];
+    }
+
+    public function attributes()
+    {
+        return [
+            "company_name" => "会社名",
+            "company_note" => "メモ",
+            "route_id" => "応募元",
         ];
     }
 }

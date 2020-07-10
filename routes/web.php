@@ -14,3 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'InterviewController@index') ->name("interviews.index");
+
+Route::get('/companies/create', 'CompanyController@showCreateForm')->name('companies.create');
+Route::post('/companies/create', 'CompanyController@create');

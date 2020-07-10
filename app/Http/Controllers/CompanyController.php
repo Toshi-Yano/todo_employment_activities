@@ -7,10 +7,21 @@ use App\Http\Requests\CompanyRequest;
 
 class CompanyController extends Controller
 {
-    public function index()
+    public function showCreateForm()
     {
-        $companies = Company::all();
+        return view("companies/create");
+    }
 
-        return view("companies/index", compact("companies"));
+    public function create(CompanyRequest $request)
+    {
+        $company = new Company();
+        $company->company_name = $request->company_name;
+        $company->company_note = $request->company_note;
+        $company->route_id = $request->route_id;
+        $company->save();
+
+        return redirect()->route("interviews.index",[
+            // "id" => $company->id,
+        ]);
     }
 }
