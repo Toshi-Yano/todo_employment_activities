@@ -1,8 +1,7 @@
 @extends('layout')
 
 @section('styles')
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <link rel="stylesheet" href="https://npmcdn.com/flatpickr/dist/themes/material_blue.css">
+  @include('share.flatpickr.styles')
 @endsection
 
 @section('content')
@@ -26,8 +25,8 @@
                 <input type="text" class="form-control" name="stage_id" id="stage_id" value="{{ old('stage_id') ?? $interview->stage_id }}" />
               </div>
               <div class="form-group">
-              <label for="schedule">面接日時</label>
-                <input type="text" class="form-control" name="schedule" id="schedule" value="{{ old('schedule') }}" />
+                <label for="schedule">面接日時</label>
+                <input type="text" class="form-control" name="schedule" id="schedule" value="{{ old('schedule', $interview->formatted_schedule) }}" />
               </div>
               <div class="text-right">
                 <button type="submit" class="btn btn-primary">送信</button>
@@ -41,14 +40,5 @@
 @endsection
 
 @section('scripts')
-  <script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
-  <script src="https://npmcdn.com/flatpickr/dist/l10n/ja.js"></script>
-  <script>
-    flatpickr(document.getElementById('schedule'), {
-      locale: 'ja',
-      enableTime: true,
-      dateFormat: "Y/m/d H:i:ss",
-      minDate: new Date()
-    });
-  </script>
+  @include('share.flatpickr.scripts')
 @endsection

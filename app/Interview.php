@@ -25,6 +25,6 @@ class Interview extends Model
     public function getFormattedScheduleAttribute()
     {
         return Carbon::createFromFormat('Y-m-d H:i:s', $this->attributes['schedule'])
-            ->format('m/d H:i');
+            ->format('Y/m/d H:i');
     }
 }
