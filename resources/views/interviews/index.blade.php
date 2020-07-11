@@ -30,7 +30,7 @@
                     <span class="label">{{ $interview->stage->body }}</span>
                   </td>
                   <td>{{ $interview->formatted_schedule }}</td>
-                  <td><a href="#">編集</a></td>
+                  <td><a href="{{ route('interviews.edit', ['id' => $interview->company_id, 'interview_id' => $interview->id]) }}">編集</a></td>
                 </tr>
                 @endforeach
               </tbody>

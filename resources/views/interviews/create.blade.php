@@ -28,6 +28,10 @@
                 <label for="schedule">面接日時</label>
                 <input type="text" class="form-control" name="schedule" id="schedule" value="{{ old('schedule') }}" />
               </div>
+              <div class="form-group">
+                <label for="interview_note">メモ</label>
+                <input type="text" class="form-control" name="interview_note" id="interview_note" value="{{ old('interview_note') }}" />
+              </div>
               <div class="text-right">
                 <button type="submit" class="btn btn-primary">送信</button>
               </div>
