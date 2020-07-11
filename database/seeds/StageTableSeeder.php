@@ -13,9 +13,6 @@ class StageTableSeeder extends Seeder
     public function run()
     {
         DB::table("stages")->insert([
-            "body" => "お見送り",
-        ]);
-        DB::table("stages")->insert([
             "body" => "書類選考",
         ]);
         DB::table("stages")->insert([

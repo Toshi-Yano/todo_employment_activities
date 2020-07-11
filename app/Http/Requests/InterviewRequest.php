@@ -13,7 +13,7 @@ class InterviewRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,8 +24,14 @@ class InterviewRequest extends FormRequest
     public function rules()
     {
         return [
-            "schedule" => "nullable",
             "interview_note" => "nullable|max:1000",
+        ];
+    }
+
+    public function attributes()
+    {
+        return [
+            "interview_note" => "メモ",
         ];
     }
 }
