@@ -22,7 +22,6 @@ class CreateInterviewsTable extends Migration
             $table->integer('stage_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('company_id')->references('id')->on('companies');
             $table->foreign('stage_id')->references('id')->on('stages');
         });
