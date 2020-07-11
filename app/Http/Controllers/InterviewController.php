@@ -14,8 +14,6 @@ class InterviewController extends Controller
         $companies = Company::all();
         
         return view("interviews/index", [
-            // compact("interviews"),
-            // compact("companies"),
             "interviews" => $interviews,
             "companies" => $companies,
         ]);
@@ -39,5 +37,14 @@ class InterviewController extends Controller
         $selected_company->interviews()->save($interview);
 
         return redirect()->route("interviews.index");
+    }
+
+    public function showEditForm(int $id, int $interview_id)
+    {
+        $interview = Interview::find($interview_id);
+
+        return view('interviews/edit', [
+            'interview' => $interview,
+        ]);
     }
 }

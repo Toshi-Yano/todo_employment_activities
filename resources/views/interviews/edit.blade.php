@@ -10,7 +10,7 @@
     <div class="row">
       <div class="col col-md-offset-3 col-md-6">
         <nav class="panel panel-default">
-          <div class="panel-heading">面接を追加する</div>
+          <div class="panel-heading">面接を編集する</div>
           <div class="panel-body">
             @if($errors->any())
               <div class="alert alert-danger">
@@ -19,14 +19,14 @@
                 @endforeach
               </div>
             @endif
-            <form action="{{ route('interviews.create', ['id' => $company_id]) }}" method="POST">
+            <form action="{{ route('interviews.edit', ['id' => $interview->company_id, 'interview_id' => $interview->id]) }}" method="POST">
               @csrf
               <div class="form-group">
                 <label for="stage_id">段階</label>
-                <input type="text" class="form-control" name="stage_id" id="stage_id" value="{{ old('stage_id') }}" />
+                <input type="text" class="form-control" name="stage_id" id="stage_id" value="{{ old('stage_id') ?? $interview->stage_id }}" />
               </div>
               <div class="form-group">
-                <label for="schedule">面接日時</label>
+              <label for="schedule">面接日時</label>
                 <input type="text" class="form-control" name="schedule" id="schedule" value="{{ old('schedule') }}" />
               </div>
               <div class="text-right">
