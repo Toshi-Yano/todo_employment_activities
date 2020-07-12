@@ -4865,16 +4865,16 @@ input[type=button].btn-block {
 }
 
 .navbar-light .navbar-brand {
-  color: rgba(0, 0, 0, 0.9);
+  color: #8c8c8c;
 }
 
 .navbar-light .navbar-brand:hover,
 .navbar-light .navbar-brand:focus {
-  color: rgba(0, 0, 0, 0.9);
+  color: #8c8c8c;
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: rgba(0, 0, 0, 0.5);
+  color: #8c8c8c;
 }
 
 .navbar-light .navbar-nav .nav-link:hover,
@@ -4894,7 +4894,7 @@ input[type=button].btn-block {
 }
 
 .navbar-light .navbar-toggler {
-  color: rgba(0, 0, 0, 0.5);
+  color: #8c8c8c;
   border-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -4903,7 +4903,7 @@ input[type=button].btn-block {
 }
 
 .navbar-light .navbar-text {
-  color: rgba(0, 0, 0, 0.5);
+  color: #8c8c8c;
 }
 
 .navbar-light .navbar-text a {
@@ -7069,7 +7069,7 @@ button.bg-dark:focus {
 }
 
 .bg-white {
-  background-color: #fff !important;
+  background-color: #333 !important;
 }
 
 .bg-transparent {
@@ -10795,7 +10795,7 @@ a.text-dark:focus {
 }
 
 .text-black-50 {
-  color: rgba(0, 0, 0, 0.5) !important;
+  color: #8c8c8c !important;
 }
 
 .text-white-50 {
