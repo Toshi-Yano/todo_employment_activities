@@ -28,9 +28,7 @@ class AddUserIdToCompanies extends Migration
     public function down()
     {
         Schema::table('companies', function (Blueprint $table) {
-            $table->dropColumn('user_id');
-
-            $table->dropForeign('companies_user_id_foreign');
+            //
         });
     }
 }
