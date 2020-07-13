@@ -35,10 +35,10 @@ class InterviewController extends Controller
         $interview->stage_id = $request->stage_id;
         $interview->schedule = $request->schedule;
         $interview->interview_note = $request->interview_note;
+        $interview->company_id = $selected_company->id;
+        Auth::user()->interviews()->save($interview);
 
-        $selected_company->interviews()->save($interview);
-
-        return redirect()->route("interviews.index");
+        return redirect()->route('companies.show', ['id' => $id]);
     }
 
     public function showEditForm(int $id, int $interview_id)
