@@ -47,7 +47,7 @@
           </div>
           <div class="list-group">
             @foreach($companies as $company)
-              <a href="{{ route('interviews.index', ['id' => $company->id]) }}" class="list-group-item">
+              <a href="{{ route('companies.show', ['id' => $company->id]) }}" class="list-group-item">
                 {{ $company->company_name }}
                 {{ $company->route_id }}
               </a>

@@ -25,4 +25,18 @@ class CompanyController extends Controller
             // "id" => $company->id,
         ]);
     }
+
+    public function show(int $id)
+    {
+        $company = Auth::user()->companies()->get();
+        $interviews = Auth::user()->interviews()->get();
+
+        $company = $company->find($id);
+        $interviews = $interviews->where('company_id', $id);
+
+        return view("companies/show",[
+            "company" => $company,
+            "interviews" => $interviews,
+        ]);
+    }
 }
