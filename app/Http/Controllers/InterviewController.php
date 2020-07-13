@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use App\Interview;
 use App\Company;
 use App\Http\Requests\InterviewRequest;
+use Illuminate\Support\Facades\Auth;
 
 class InterviewController extends Controller
 {
     public function index()
     {
-        $interviews = Interview::all();
-        $companies = Company::all();
+        $interviews = Auth::user()->interviews()->get();
+        $companies = Auth::user()->companies()->get();
         
         return view("interviews/index", [
             "interviews" => $interviews,
