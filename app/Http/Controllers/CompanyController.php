@@ -21,9 +21,7 @@ class CompanyController extends Controller
         $company->route_id = $request->route_id;
         Auth::user()->companies()->save($company);
 
-        return redirect()->route("interviews.index",[
-            // "id" => $company->id,
-        ]);
+        return redirect()->route("interviews.index");
     }
 
     public function show(int $id)

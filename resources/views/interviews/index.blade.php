@@ -6,13 +6,6 @@
       <div class="column">
         <div class="panel panel-default">
           <div class="panel-heading">面接予定</div>
-          <div class="panel-body">
-            <div class="text-right">
-              <!-- <a href="#" class="btn btn-default btn-block">
-                タスクを追加する
-              </a> -->
-            </div>
-          </div>
           <table class="table">
             <thead>
               <tr>
@@ -45,17 +38,26 @@
               企業を登録する
             </a>
           </div>
-          <div class="list-group">
-            @foreach($companies as $company)
-              <a href="{{ route('companies.show', ['id' => $company->id]) }}" class="list-group-item">
-                {{ $company->company_name }}
-                {{ $company->route_id }}
-              </a>
-              <!-- <a href="#" class="btn btn-default btn-block">
-                タスクを追加する
-              </a> -->
-            @endforeach
-          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>タイトル</th>
+                <th>応募</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach($companies as $company)
+              <tr>
+                <td>{{ $company->company_name }}</td>
+                  <td>
+                    <span class="label">{{ $interview->stage->body }}</span>
+                  </td>
+                  <td><a href="{{ route('companies.show', ['id' => $company->id]) }}">詳細</a></td>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
         </nav>
       </div>
     </div>
