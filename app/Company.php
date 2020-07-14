@@ -17,7 +17,7 @@ class Company extends Model
         return $this->hasMany('App\Interview');
     }
 
-    public function routes()
+    public function route()
     {
         return $this->belongsTo('App\Route');
     }

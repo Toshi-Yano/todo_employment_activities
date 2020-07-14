@@ -11,7 +11,7 @@ class InterviewController extends Controller
 {
     public function index()
     {
-        $interviews = Auth::user()->interviews()->get();
+        $interviews = Auth::user()->interviews()->paginate(5);
         $companies = Auth::user()->companies()->get();
         
         return view("interviews/index", [

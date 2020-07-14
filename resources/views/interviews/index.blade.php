@@ -19,15 +19,16 @@
               @foreach($interviews as $interview)
               <tr>
                 <td>{{ $interview->company->company_name }}</td>
-                  <td>
-                    <span class="label">{{ $interview->stage->body }}</span>
-                  </td>
-                  <td>{{ $interview->formatted_schedule }}</td>
-                  <td><a href="{{ route('interviews.edit', ['id' => $interview->company_id, 'interview_id' => $interview->id]) }}">編集</a></td>
-                </tr>
-                @endforeach
-              </tbody>
-            </table>
+                <td>
+                  <span class="label">{{ $interview->stage->body }}</span>
+                </td>
+                <td>{{ $interview->formatted_schedule }}</td>
+                <td><a href="{{ route('interviews.edit', ['id' => $interview->company_id, 'interview_id' => $interview->id]) }}">編集</a></td>
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
+          {{ $interviews->links() }}
           </div>
         </div>
       <div class="col">
@@ -50,14 +51,14 @@
               @foreach($companies as $company)
               <tr>
                 <td>{{ $company->company_name }}</td>
-                  <td>
-                    <span class="label">{{ $interview->stage->body }}</span>
-                  </td>
-                  <td><a href="{{ route('companies.show', ['id' => $company->id]) }}">詳細</a></td>
-                </tr>
-                @endforeach
-              </tbody>
-            </table>
+                <td>
+                  <span class="label">{{ $company->route->body }}</span>
+                </td>
+                <td><a href="{{ route('companies.show', ['id' => $company->id]) }}">詳細</a></td>
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
         </nav>
       </div>
     </div>
