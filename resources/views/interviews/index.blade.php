@@ -10,7 +10,7 @@
             <thead>
               <tr>
                 <th>タイトル</th>
-                <th>段階</th>
+                <th>選考</th>
                 <th>面接日時</th>
                 <th></th>
               </tr>

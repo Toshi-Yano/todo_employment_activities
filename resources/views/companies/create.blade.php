@@ -24,7 +24,11 @@
                 <label for="company_note">メモ</label>
                 <input type="text" class="form-control" name="company_note" id="company_note" value="{{ old('company_note') }}" />
                 <label for="route_id">応募元</label>
-                <input type="text" class="form-control" name="route_id" id="route_id" value="{{ old('route_id') }}" />
+                <select class="form-control" name="route_id" id="route_id" value="{{ old('route_id') }}">
+                  @foreach($routes as $route)
+                    <option value="{{$route->id}}">{{$route->body}}</option>
+                  @endforeach
+                </select>
               </div>
               <div class="text-right">
                 <button type="submit" class="btn btn-primary">送信</button>

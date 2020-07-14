@@ -24,13 +24,17 @@ class InterviewRequest extends FormRequest
     public function rules()
     {
         return [
-            "interview_note" => "nullable|max:1000",
+            "stage_id" => "required",
+            'schedule' => "required",
+            "interview_note" => "required|max:1000",
         ];
     }
 
     public function attributes()
     {
         return [
+            "stage_id" => "選考ステップ",
+            'schedule' => "面接日時",
             "interview_note" => "メモ",
         ];
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Company;
+use App\Route;
 use App\Http\Requests\CompanyRequest;
 use Illuminate\Support\Facades\Auth;
 
@@ -10,7 +11,11 @@ class CompanyController extends Controller
 {
     public function showCreateForm()
     {
-        return view("companies/create");
+        $routes = Route::all();
+
+        return view("companies/create",[
+            "routes" => $routes,
+        ]);
     }
 
     public function create(CompanyRequest $request)
