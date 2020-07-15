@@ -12,11 +12,11 @@ class CompanyController extends Controller
     public function showCreateForm()
     {
         $routes = Route::all();
-        $situations = config('situations');
+        // $situations = config('situations');
 
         return view("companies/create",[
             "routes" => $routes,
-            "situations" => $situations,
+            // "situations" => $situations,
         ]);
     }
 
@@ -26,7 +26,7 @@ class CompanyController extends Controller
         $company->company_name = $request->company_name;
         $company->company_note = $request->company_note;
         $company->route_id = $request->route_id;
-        $company->situation_id = 1; // 1 = 選考中
+        $company->situation_id = 1; // => 選考中
         Auth::user()->companies()->save($company);
 
         return redirect()->route("interviews.index");

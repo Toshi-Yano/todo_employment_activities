@@ -43,18 +43,29 @@
             <thead>
               <tr>
                 <th>タイトル</th>
+                <th>状況</th>
                 <th>応募</th>
-                <th></th>
               </tr>
             </thead>
             <tbody>
               @foreach($companies as $company)
               <tr>
-                <td>{{ $company->company_name }}</td>
+                <td>
+                <a href="{{ route('companies.show', ['id' => $company->id]) }}">
+                  {{ $company->company_name }}
+                </a>
+                </td>
+                <td>
+                  <span class="label">{{ $company->situationName}}</span>
+                  <!-- <select>
+                    @foreach($situations as $index => $name)
+                      <option value="{{ $index }}">{{$name}}</option>
+                    @endforeach
+                  </select> -->
+                </td>
                 <td>
                   <span class="label">{{ $company->route->body }}</span>
                 </td>
-                <td><a href="{{ route('companies.show', ['id' => $company->id]) }}">詳細</a></td>
               </tr>
               @endforeach
             </tbody>

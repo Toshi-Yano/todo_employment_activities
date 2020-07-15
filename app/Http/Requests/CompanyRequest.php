@@ -37,7 +37,7 @@ class CompanyRequest extends FormRequest
             "company_name" => "会社名",
             "company_note" => "メモ",
             "route_id" => "応募元",
-            "situation_id" => "選考状況",
+            "situation_id" => "状況",
         ];
     }
 }

@@ -6,6 +6,7 @@ use App\Interview;
 use App\Company;
 use App\Stage;
 use App\Http\Requests\InterviewRequest;
+use Config;
 use Illuminate\Support\Facades\Auth;
 
 class InterviewController extends Controller
@@ -14,10 +15,12 @@ class InterviewController extends Controller
     {
         $interviews = Auth::user()->interviews()->paginate(5);
         $companies = Auth::user()->companies()->get();
+        $situations = config::get('situations');
         
         return view("interviews/index", [
             "interviews" => $interviews,
             "companies" => $companies,
+            "situations" => $situations,
         ]);
     }
 

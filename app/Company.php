@@ -21,4 +21,8 @@ class Company extends Model
     {
         return $this->belongsTo('App\Route');
     }
+
+    public function getSituationNameAttribute(){
+        return config('situations.'.$this->situation_id);
+    }
 }
