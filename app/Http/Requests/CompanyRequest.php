@@ -27,6 +27,7 @@ class CompanyRequest extends FormRequest
             "company_name" => "required|max:100",
             "company_note" => "required|max:1000",
             "route_id" => "required",
+            "situation_id" => "required|max:3",
         ];
     }
 
@@ -36,6 +37,7 @@ class CompanyRequest extends FormRequest
             "company_name" => "会社名",
             "company_note" => "メモ",
             "route_id" => "応募元",
+            "situation_id" => "選考状況",
         ];
     }
 }
