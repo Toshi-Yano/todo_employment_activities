@@ -31,7 +31,7 @@
           <tbody>
             @foreach($interviews as $interview)
             <tr>
-              <td>{{ $interview->stage->body }}</td>
+              <td>{{ $interview->stage->body }} 【{{ $interview->interview_note }}】</td>
               <td>{{ $interview->formatted_schedule }}</td>
               <td><a href="{{ route('interviews.edit', ['id' => $interview->company_id, 'interview_id' => $interview->id]) }}">編集</a></td>
             </tr>

@@ -9,7 +9,7 @@
           <table class="table">
             <thead>
               <tr>
-                <th>タイトル</th>
+                <th>会社名</th>
                 <th>選考</th>
                 <th>面接日時</th>
                 <th></th>
@@ -18,7 +18,7 @@
             <tbody>
               @foreach($interviews as $interview)
               <tr>
-                <td>{{ $interview->company->company_name }}</td>
+                <td>{{ $interview->company->company_name }} 【{{ $interview->interview_note }}】</td>
                 <td>
                   <span class="label">{{ $interview->stage->body }}</span>
                 </td>
@@ -42,7 +42,7 @@
           <table class="table">
             <thead>
               <tr>
-                <th>タイトル</th>
+                <th>会社名</th>
                 <th>状況</th>
                 <th>応募</th>
               </tr>
@@ -51,12 +51,12 @@
               @foreach($companies as $company)
               <tr>
                 <td>
-                <a href="{{ route('companies.show', ['id' => $company->id]) }}">
-                  {{ $company->company_name }}
+                <a class= "link--black-text" href="{{ route('companies.show', ['id' => $company->id]) }}">
+                  {{ $company->company_name }} 【{{ $company->company_note }}】
                 </a>
                 </td>
                 <td>
-                  <span class="label">{{ $company->situationName}}</span>
+                  <span class="label">{{ $company->situation_name}}</span>
                   <!-- <select>
                     @foreach($situations as $index => $name)
                       <option value="{{ $index }}">{{$name}}</option>
