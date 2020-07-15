@@ -24,9 +24,9 @@
                 <label for="company_note">メモ</label>
                 <input type="text" class="form-control" name="company_note" id="company_note" value="{{ old('company_note') }}" />
                 <label for="route_id">応募元</label>
-                <select class="form-control" name="route_id" id="route_id" value="{{ old('route_id') }}">
+                <select class="form-control" name="route_id" id="route_id">
                   @foreach($routes as $route)
-                    <option value="{{$route->id}}">{{$route->body}}</option>
+                    <option value={{$route->id}} @if(old('route_id') == $route->id) selected @endif>{{$route->body}}</option>
                   @endforeach
                 </select>
               </div>

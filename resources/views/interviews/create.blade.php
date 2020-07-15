@@ -22,7 +22,11 @@
               @csrf
               <div class="form-group">
                 <label for="stage_id">選考ステップ</label>
-                <input type="text" class="form-control" name="stage_id" id="stage_id" value="{{ old('stage_id') }}" />
+                <select class="form-control" name="stage_id" id="stage_id" >
+                  @foreach($stages as $stage)
+                  <option value={{$stage->id}} @if(old('stage_id') == $stage->id) selected @endif>{{$stage->body}}</option>
+                  @endforeach
+                </select>
               </div>
               <div class="form-group">
                 <label for="schedule">面接日時</label>
