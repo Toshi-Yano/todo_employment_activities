@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Interview;
 use App\Company;
 use App\Stage;
-use App\Http\Requests\InterviewRequest;
 use Config;
+use App\Http\Requests\InterviewRequest;
 use Illuminate\Support\Facades\Auth;
 
 class InterviewController extends Controller
@@ -15,7 +15,7 @@ class InterviewController extends Controller
     {
         $interviews = Auth::user()->interviews()->paginate(5);
         $companies = Auth::user()->companies()->get();
-        $situations = config::get('situations');
+        $situations = Config::get('situations');
         
         return view("interviews/index", [
             "interviews" => $interviews,
@@ -51,13 +51,13 @@ class InterviewController extends Controller
     public function showEditForm(int $id, int $interview_id)
     {
         $interview = Interview::find($interview_id);
-        $previous_stage_id = $interview->stage_id;
+        $past_stage_id = $interview->stage_id;
         $stages = Stage::all();
 
         return view('interviews/edit', [
             'interview' => $interview,
-            'previous_stage_id' => $previous_stage_id,
-            "stages" => $stages,
+            'past_stage_id' => $past_stage_id,
+            'stages' => $stages,
         ]);
     }
 

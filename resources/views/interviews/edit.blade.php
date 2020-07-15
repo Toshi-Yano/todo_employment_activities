@@ -25,10 +25,11 @@
                 <select class="form-control" name="stage_id" id="stage_id" >
                 @foreach($stages as $stage)
                   <option value= {{$stage->id}}
-                    @if(empty(old()) && $previous_stage_id == $stage->id) selected
+                    @if(empty(old()) && $past_stage_id == $stage->id) selected
                     @elseif(old('stage_id') == $stage->id) selected
                     @endif
-                    >{{$stage->body}}</option>
+                    >{{$stage->body}}
+                  </option>
                 @endforeach
                 </select>
               </div>

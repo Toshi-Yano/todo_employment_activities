@@ -5,7 +5,12 @@
     <div class="row">
       <div class="column">
         <div class="panel panel-default">
-          <div class="panel-heading">{{ $company->company_name }}</div>
+          <div class="panel-heading panel-title-spacebetween">
+            {{ $company->company_name }}  【{{ $company->route->body }}】
+            <div class="panel-title-right">
+              <a class="text-right" href="{{ route('companies.edit', ['id' => $company->id]) }}">編集</a>
+            </div>
+          </div>
           <div class="panel-body">
             <p>{{ $company->company_note }}</p>
           </div>

@@ -26,5 +26,7 @@ Route::group(['middleware' => 'auth'], function() {
   
   Route::get('/companies/create', 'CompanyController@showCreateForm')->name('companies.create');
   Route::post('/companies/create', 'CompanyController@create');
+  Route::get('/companies/{id}/edit', 'CompanyController@showEditForm')->name('companies.edit');
+  Route::post('/companies/{id}/edit', 'CompanyController@edit');
   Route::get('companies/{id}/show', 'CompanyController@show')->name('companies.show');
 });

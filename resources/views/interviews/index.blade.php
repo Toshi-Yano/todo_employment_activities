@@ -52,16 +52,11 @@
               <tr>
                 <td>
                 <a class= "link--black-text" href="{{ route('companies.show', ['id' => $company->id]) }}">
-                  {{ $company->company_name }} 【{{ $company->company_note }}】
+                  {{ $company->company_name }}
                 </a>
                 </td>
                 <td>
                   <span class="label">{{ $company->situation_name}}</span>
-                  <!-- <select>
-                    @foreach($situations as $index => $name)
-                      <option value="{{ $index }}">{{$name}}</option>
-                    @endforeach
-                  </select> -->
                 </td>
                 <td>
                   <span class="label">{{ $company->route->body }}</span>
