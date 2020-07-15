@@ -26,7 +26,6 @@ class CompanyRequest extends FormRequest
         return [
             "company_name" => "required|max:100",
             "company_note" => "required|max:1000",
-            // "company_note" => "nullable|max:1000",
             "route_id" => "required",
         ];
     }
