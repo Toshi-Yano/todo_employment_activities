@@ -34,4 +34,19 @@ class Company extends Model
             $company->interviews()->delete();
         });
     }
+
+    public function scopeCurrent($query)
+    {
+        return $query->where('situation_id', '1');
+    }
+
+    public function scopeOffered($query)
+    {
+        return $query->where('situation_id', '2');
+    }
+
+    public function scopeDefeat($query)
+    {
+        return $query->where('situation_id', '3');
+    }
 }

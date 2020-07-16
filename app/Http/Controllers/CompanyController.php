@@ -64,7 +64,7 @@ class CompanyController extends Controller
     public function show(int $id)
     {
         $company = Auth::user()->companies()->get();
-        $interviews = Auth::user()->interviews()->get();
+        $interviews = Auth::user()->interviews()->orderby('schedule', 'asc')->get();
 
         $company = $company->find($id);
         $interviews = $interviews->where('company_id', $id);
@@ -78,10 +78,6 @@ class CompanyController extends Controller
     public function destroy(int $id)
     {
         Company::find($id)->delete();
-        // $companies = Company::where('id', $id)->get();
-        // foreach($companies as $company) {
-        //     $company->delete();
-        // }
         
         return redirect()->route("interviews.index");
     }
