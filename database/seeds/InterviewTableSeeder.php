@@ -26,6 +26,33 @@ class InterviewTableSeeder extends Seeder
             "schedule" => Carbon::now()->addDay(2),
             "interview_note" => "履歴書持参",
             "user_id" => 1,
+            "company_id" => 1,
+            "stage_id" => 2,
+            "created_at" => new DateTime(),
+            "updated_at" => new DateTime(),
+        ]);
+        DB::table("interviews")->insert([
+            "schedule" => Carbon::now()->addDay(3),
+            "interview_note" => "履歴書持参",
+            "user_id" => 1,
+            "company_id" => 1,
+            "stage_id" => 3,
+            "created_at" => new DateTime(),
+            "updated_at" => new DateTime(),
+        ]);
+        DB::table("interviews")->insert([
+            "schedule" => Carbon::now()->addDay(4),
+            "interview_note" => "履歴書持参",
+            "user_id" => 1,
+            "company_id" => 1,
+            "stage_id" => 5,
+            "created_at" => new DateTime(),
+            "updated_at" => new DateTime(),
+        ]);
+        DB::table("interviews")->insert([
+            "schedule" => Carbon::now()->addDay(2),
+            "interview_note" => "履歴書持参",
+            "user_id" => 1,
             "company_id" => 2,
             "stage_id" => 2,
             "created_at" => new DateTime(),
