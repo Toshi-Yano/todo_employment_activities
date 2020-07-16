@@ -44,3 +44,12 @@ a.my-navbar-item:hover {
 .form-control[readonly] {
   background-color: #fff;
 }
+
+.link--black-text {
+  color: black;
+}
+
+.panel-title-spacebetween {
+  display: flex;
+  justify-content: space-between;
+}

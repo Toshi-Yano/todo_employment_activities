@@ -19,6 +19,7 @@ class companiesSeeder extends Seeder
             "updated_at" => new DateTime(),
             "route_id" => 1,
             "user_id" => 1,
+            "situation_id" => 1,
         ]);
         DB::table("companies")->insert([
             "company_name" => "BBB株式会社",
@@ -27,6 +28,7 @@ class companiesSeeder extends Seeder
             "updated_at" => new DateTime(),
             "route_id" => 2,
             "user_id" => 1,
+            "situation_id" => 1,
         ]);
         DB::table("companies")->insert([
             "company_name" => "CCC株式会社",
@@ -35,6 +37,7 @@ class companiesSeeder extends Seeder
             "updated_at" => new DateTime(),
             "route_id" => 3,
             "user_id" => 1,
+            "situation_id" => 2,
         ]);
         DB::table("companies")->insert([
             "company_name" => "DDD株式会社",
@@ -43,6 +46,7 @@ class companiesSeeder extends Seeder
             "updated_at" => new DateTime(),
             "route_id" => 1,
             "user_id" => 2,
+            "situation_id" => 1,
         ]);
         DB::table("companies")->insert([
             "company_name" => "EEE株式会社",
@@ -51,6 +55,7 @@ class companiesSeeder extends Seeder
             "updated_at" => new DateTime(),
             "route_id" => 2,
             "user_id" => 2,
+            "situation_id" => 1,
         ]);
     }
 }

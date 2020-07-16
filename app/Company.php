@@ -21,4 +21,32 @@ class Company extends Model
     {
         return $this->belongsTo('App\Route');
     }
+
+    public function getSituationNameAttribute()
+    {
+        return config('situations.'.$this->situation_id);
+    }
+
+    public static function boot()
+    {
+        parent::boot();
+        static::deleting(function($company) {
+            $company->interviews()->delete();
+        });
+    }
+
+    public function scopeCurrent($query)
+    {
+        return $query->where('situation_id', '1');
+    }
+
+    public function scopeOffered($query)
+    {
+        return $query->where('situation_id', '2');
+    }
+
+    public function scopeDefeat($query)
+    {
+        return $query->where('situation_id', '3');
+    }
 }

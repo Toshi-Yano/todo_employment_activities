@@ -27,4 +27,11 @@ class Interview extends Model
         return Carbon::createFromFormat('Y-m-d H:i:s', $this->attributes['schedule'])
             ->format('Y/m/d H:i');
     }
+
+    public function scopeRecentInterview($query)
+    {
+        return $query
+            ->whereDate('schedule', '>=', Carbon::today())
+            ->orderby('schedule', 'asc');
+    }
 }
