@@ -26,4 +26,12 @@ class Company extends Model
     {
         return config('situations.'.$this->situation_id);
     }
+
+    public static function boot()
+    {
+        parent::boot();
+        static::deleting(function($company) {
+            $company->interviews()->delete();
+        });
+    }
 }

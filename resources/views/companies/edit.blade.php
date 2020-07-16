@@ -46,8 +46,15 @@
                   @endforeach
                 </select>
               </div>
-              <div class="text-right">
+              <div class="text-center">
                 <button type="submit" class="btn btn-primary">送信</button>
+              </div>
+            </form>
+            <form style="display:inline" action="{{ route('companies.destroy', ['id' => $company->id]) }}" method="post">
+              @csrf
+              @method('DELETE')
+              <div class="text-center">
+                <button type="submit" class="btn btn-danger">削除</button>
               </div>
             </form>
           </div>

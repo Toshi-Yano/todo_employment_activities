@@ -74,4 +74,15 @@ class CompanyController extends Controller
             "interviews" => $interviews,
         ]);
     }
+
+    public function destroy(int $id)
+    {
+        Company::find($id)->delete();
+        // $companies = Company::where('id', $id)->get();
+        // foreach($companies as $company) {
+        //     $company->delete();
+        // }
+        
+        return redirect()->route("interviews.index");
+    }
 }
