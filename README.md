@@ -25,12 +25,12 @@
 
 # 参考動画
 ![就活状況管理アプリ](https://user-images.githubusercontent.com/62419040/87724381-56c73700-c7f6-11ea-9d4a-c24805206ba7.gif)
-※収録時間20秒
-※ローカルで挙動をご確認頂ける場合は、seedファイルに参考データが登録されています。
+※収録時間20秒<br>
+※ローカルで挙動をご確認頂ける場合は、seedファイルに参考データが登録されています。<br>
  DB名：'todo_employment_activities'、パスワード未登録です。
  
 # ER図
-[就活状況管理アプリ.pdf](https://github.com/Toshi-Yano/todo_employment_activities/files/4934008/default.pdf)
+![就活状況管理アプリ](https://user-images.githubusercontent.com/62419040/87725431-4617c080-c7f8-11ea-8513-07173cf14e0d.jpeg)
 
 # 今後の取り組み
 - 非同期での検索、並べ替え（選考中 or お見送りなど）
