@@ -17,11 +17,11 @@ class InterviewController extends Controller
         $companies = Auth::user()->companies()->get();
         $situations = Config::get('situations');
         
-        return view("interviews/index", [
-            "interviews" => $interviews,
-            "companies" => $companies,
-            "situations" => $situations,
-        ]);
+        return view("interviews/index",compact(
+            'interviews',
+            'companies',
+            'situations'
+        ));
     }
 
     public function showCreateForm(int $id)
@@ -45,7 +45,7 @@ class InterviewController extends Controller
         $interview->company_id = $selected_company->id;
         Auth::user()->interviews()->save($interview);
 
-        return redirect()->route('companies.show', ['id' => $id]);
+        return redirect()->route('companies.show',compact('id'));
     }
 
     public function showEditForm(int $id, int $interview_id)
@@ -54,11 +54,11 @@ class InterviewController extends Controller
         $past_stage_id = $interview->stage_id;
         $stages = Stage::all();
 
-        return view('interviews/edit', [
-            'interview' => $interview,
-            'past_stage_id' => $past_stage_id,
-            'stages' => $stages,
-        ]);
+        return view('interviews/edit',compact(
+            'interview',
+            'past_stage_id',
+            'stages'
+        ));
     }
 
     public function edit(int $id, int $interview_id, InterviewRequest $request)
@@ -70,6 +70,6 @@ class InterviewController extends Controller
         $interview->interview_note = $request->interview_note;
         $interview->save();
 
-        return redirect()->route("interviews.index");
+        return redirect()->route('companies.show',compact('id'));
     }
 }

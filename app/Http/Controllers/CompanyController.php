@@ -14,9 +14,7 @@ class CompanyController extends Controller
     {
         $routes = Route::all();
 
-        return view("companies/create",[
-            "routes" => $routes,
-        ]);
+        return view("companies/create",compact('routes'));
     }
 
     public function create(CompanyRequest $request)
@@ -28,7 +26,7 @@ class CompanyController extends Controller
         $company->situation_id = 1; // => 選考中
         Auth::user()->companies()->save($company);
 
-        return redirect()->route("interviews.index");
+        return redirect()->route('companies.show', ['id' => $company->id]);
     }
 
     public function showEditForm(int $id)
@@ -39,13 +37,13 @@ class CompanyController extends Controller
         $situations = Config::get('situations');
         $past_situation_id = $company->situation_id;
 
-        return view("companies/edit", [
-            "company" => $company,
-            "routes" => $routes,
-            "past_route_id" => $past_route_id,
-            "situations" => $situations,
-            "past_situation_id" => $past_situation_id,
-        ]);
+        return view("companies/edit",compact(
+            'company',
+            'routes',
+            'past_route_id',
+            'situations',
+            'past_situation_id'
+        ));
     }
 
     public function edit(int $id, CompanyRequest $request)
@@ -58,7 +56,7 @@ class CompanyController extends Controller
         $company->situation_id = $request->situation_id;
         $company->save();
 
-        return redirect()->route("interviews.index");
+        return redirect()->route('companies.show', ['id' => $company->id]);
     }
 
     public function show(int $id)
@@ -69,10 +67,10 @@ class CompanyController extends Controller
         $company = $company->find($id);
         $interviews = $interviews->where('company_id', $id);
 
-        return view("companies/show",[
-            "company" => $company,
-            "interviews" => $interviews,
-        ]);
+        return view("companies/show",compact(
+            'company',
+            'interviews'
+        ));
     }
 
     public function destroy(int $id)
