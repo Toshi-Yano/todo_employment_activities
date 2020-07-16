@@ -25,7 +25,7 @@
 
 # 参考動画
 ![就活状況管理アプリ](https://user-images.githubusercontent.com/62419040/87724381-56c73700-c7f6-11ea-9d4a-c24805206ba7.gif)
-※収録時間20秒<br>
+※1周約50秒<br>
 ※ローカルで挙動をご確認頂ける場合は、seedファイルに参考データが登録されています。<br>
  DB名：'todo_employment_activities'、パスワード未登録です。
  
