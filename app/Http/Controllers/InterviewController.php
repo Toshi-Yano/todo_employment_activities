@@ -16,8 +16,8 @@ class InterviewController extends Controller
         $interviews = Auth::user()->interviews()->recentInterview()->paginate(5);
         $companies = Auth::user()->companies()->get();
         $situations = Config::get('situations');
-        
-        return view("interviews/index",compact(
+
+        return view("interviews/index", compact(
             'interviews',
             'companies',
             'situations'
@@ -28,7 +28,7 @@ class InterviewController extends Controller
     {
         $stages = Stage::all();
 
-        return view("interviews/create",[
+        return view("interviews/create", [
             "company_id" => $id,
             "stages" => $stages,
         ]);
@@ -45,7 +45,7 @@ class InterviewController extends Controller
         $interview->company_id = $selected_company->id;
         Auth::user()->interviews()->save($interview);
 
-        return redirect()->route('companies.show',compact('id'));
+        return redirect()->route('companies.show', compact('id'));
     }
 
     public function showEditForm(int $id, int $interview_id)
@@ -54,7 +54,7 @@ class InterviewController extends Controller
         $past_stage_id = $interview->stage_id;
         $stages = Stage::all();
 
-        return view('interviews/edit',compact(
+        return view('interviews/edit', compact(
             'interview',
             'past_stage_id',
             'stages'
@@ -70,6 +70,6 @@ class InterviewController extends Controller
         $interview->interview_note = $request->interview_note;
         $interview->save();
 
-        return redirect()->route('companies.show',compact('id'));
+        return redirect()->route('companies.show', compact('id'));
     }
 }
